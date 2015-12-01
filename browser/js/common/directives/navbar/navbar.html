@@ -4,7 +4,7 @@
             <logo></logo>
         </div>
         <ul class="nav navbar-nav">
-            <li style="display: inlime-block;" ng-repeat="item in items" ng-show="!item.auth || isLoggedIn()">
+            <li style="float: left; clear: both;" ng-repeat="item in items" ng-show="!item.auth || isLoggedIn()">
                 <a class="navitem" ui-sref-active="active" ui-sref="{{ item.state }}">{{ item.label }}</a>
             </li>
         </ul>
