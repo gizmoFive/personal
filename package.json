@@ -1,7 +1,10 @@
 {
-  "name": "FullstackGeneratedApp",
+  "name": "Danrlabrie",
   "version": "1.0.0",
-  "description": "A generated project at Fullstack Academy",
+    "engines": {
+    "node": "4.1.1"
+  },
+  "description": "My personal website",
   "main": "server/start.js",
   "scripts": {
     "start": "nodemon --watch server -e js,html server/start.js",
