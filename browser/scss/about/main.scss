@@ -1,0 +1,26 @@
+#about {
+
+  margin: 0 auto;
+  width: 90%;
+  @include clearfix;
+
+  p {
+    width: 40%;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 18px;
+    font-weight: 300;
+    float: left;
+  }
+
+
+}
+
+#loofapic {
+  height: 75vw;
+  width: 25vw;
+  max-width: 100%;
+  max-height: 500px;
+  display: block;
+  margin: 0 auto;
+}

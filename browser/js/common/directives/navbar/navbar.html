@@ -1,0 +1,15 @@
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <logo></logo>
+        </div>
+        <ul class="nav navbar-nav">
+            <li ng-repeat="item in items" ng-show="!item.auth || isLoggedIn()">
+                <a class="navitem" ui-sref-active="active" ui-sref="{{ item.state }}">{{ item.label }}</a>
+            </li>
+        </ul>
+    </div>
+    <a href="https://github.com/Danrlabrie" target="_blank"><i style="margin-left: 2.5vw; margin-top: 70px" class="fa fa-4x fa-github"></i></a>
+    <a href="https://linkedin.com/in/danrlabrie" target="_blank"><i style="margin-left: 2.5vw; margin-top: 30px" class="fa fa-4x fa-linkedin-square"></i></a>
+    <a href="https://angel.co/daniel-labrie" target="_blank"><i style="margin-left: 2.5vw; margin-top: 30px" class="fa fa-4x fa-angellist"></i></a>
+</nav>

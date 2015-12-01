@@ -1,0 +1,70 @@
+navbar {
+  position: absolute;
+  display: block;
+  background: rgba(49,49,49, 0.8);
+  border-bottom: 1px solid black;
+  box-shadow: 1px 1px 14px -3px black;
+  height: 100vh;
+  width: 10vw;
+
+  .container {
+    max-width: 10vw;
+    padding-top: 20px;
+  }
+
+  .logo {
+    margin-top: 10px;
+    width: 100%;
+    height: 20%;
+    padding: 8px;
+    // color: white;
+    fill: white;
+  }
+
+  a {
+    color: black;
+    font-size: 16px;
+  }
+
+  .nav > li > a {
+    color: white;
+    font-family: sans;
+    display: block;
+    float: left;
+    clear: both;
+    margin-left: 0px;
+    cursor: pointer;
+    transition: color 0.2s;
+    &.active {
+      color: darken(#f31214, 10%);
+    }
+    &:hover {
+      background: rgba(0,3,4,0.2);
+      color: #f31214;
+    }
+    &:focus {
+      background: none;
+    }
+  }
+
+  .fa-linkedin-square {
+    color: white;
+    &:hover {
+      color: #f31214;
+    }
+  }
+
+  .fa-github{
+    color: white;
+    &:hover {
+      color: #f31214;
+    }
+  }
+  
+  .fa-angellist{
+    color: white;
+    &:hover {
+      color: #f31214;
+    }
+  }
+}
