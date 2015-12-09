@@ -6,7 +6,7 @@ app.config(function ($stateProvider) {
     });
 });
 
-app.controller('homecontroller', function ($scope) {
+app.controller('homecontroller', function ($rootScope, $scope) {
   $scope.message = '';
   setInterval(function(){ 
     if($scope.message !== 'Welcome!_') {
@@ -14,6 +14,5 @@ app.controller('homecontroller', function ($scope) {
       $scope.$digest();
     }
     else if( $scope.message === 'Welcome!_') $scope.message = $scope.message.slice(0,$scope.message.length-2);
-
   }, 300);
 });

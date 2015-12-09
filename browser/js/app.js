@@ -1,4 +1,6 @@
 'use strict';
+
+$('#preloader').css("display", "none");
 window.app = angular.module('FullstackGeneratedApp', ['ui.router', 'ui.bootstrap', 'fsaPreBuilt', 'd3']);
 
 app.config(function ($urlRouterProvider, $locationProvider) {
@@ -7,7 +9,10 @@ app.config(function ($urlRouterProvider, $locationProvider) {
     // If we go to a URL that ui-router doesn't have registered, go to the "/" url.
     $urlRouterProvider.otherwise('/');
 });
-
+    // for preloader
+app.controller('Maincontroller', function ($scope) {
+    $rootScop
+});
 // This app.run is for controlling access to specific states.
 app.run(function ($rootScope, AuthService, $state) {
 
