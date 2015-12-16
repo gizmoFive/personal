@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
   background: #fdfdfd;
 }
@@ -20,7 +25,6 @@ body {
 }
 
 @import 'directives/main';
-@import 'home/main';
 @import 'about/main';
 
 
@@ -34,4 +38,118 @@ body {
 
 .project-item {
   cursor: pointer;
+}
+
+
+.introduction {
+  text-align: center;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 32vh;
+  width: 90vw;
+}
+
+@keyframes slidedown {
+  from {
+    margin-top: 0px;
+    opacity: 0.25;
+  }
+
+  to {
+    margin-top: 20px;
+    color: white;
+    opacity: 1;
+  }
+
+
+}
+
+.fa-angle-down {
+  color: white;
+  text-decoration: strong;
+  animation-duration: 2s;
+  animation-name: slidedown;
+  animation-iteration-count: infinite;
+
+}
+
+#about {
+padding-bottom: 100px;
+margin-left: 10vw;
+width: 90vw;
+background-color: rgb(90,90,95);
+
+  #me_description {
+    width: 90vw;
+    padding-top: -30px;
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #mypic {
+    height: 140px;
+    width: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    z-index: 2147483647;
+    margin-top: -75px;
+
+  }
+
+  #aboutborder {
+    background-color: white;
+    width: 100vw;
+    height: 0.5vh
+  }
+}
+
+#projects {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10vw;
+  display: block;
+  width: 90vw;
+}
+
+#footer {
+  margin-left: 10vw;
+  width: 90vw;
+  background: rgb(20,20,20);
+  text-align: center;
+  padding: 20px 0;
+  color: white;
+}
+
+#footer li {
+  font-size: 1.5em; 
+  text-align: center;
+  display: inline-block;
+  list-style: none;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#footer li:hover {
+  transform: rotate(20deg) scale(1.25);
+  
+}
+
+
+#footer hr {
+    height: 1px;
+    border-top: 1px solid #d3d6d6 !important;
+    opacity: 1;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px !important;
+    width: 25px;
+}
+
+#footer .social-links {
+  padding: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
 }

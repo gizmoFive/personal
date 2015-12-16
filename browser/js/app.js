@@ -1,6 +1,16 @@
 'use strict';
 
+//hide loader
 $('#preloader').css("display", "none");
+
+$(document).on('scroll', function() {
+    var scrollpos = $(document).scrollTop();
+    if(scrollpos === 0) window.history.pushState("/", "Daniel Labrie", "/");
+    else if(scrollpos >= $("#about").offset().top - 75 && scrollpos <= $("#about").offset().top + 75) window.history.pushState('/about', "Daniel Labrie - about", "/about");
+    else if(scrollpos >= $("#projects").offset().top - 25 && scrollpos <= $("#projects").offset().top + 10) window.history.pushState('/projects', "Daniel Labrie - projects", "/projects");
+    else if(scrollpos >= $("#footer").offset().top - 500) window.history.pushState('/contact', "Daniel Labrie - contact", "/contact");
+})
+
 window.app = angular.module('FullstackGeneratedApp', ['ui.router', 'ui.bootstrap', 'fsaPreBuilt', 'd3']);
 
 app.config(function ($urlRouterProvider, $locationProvider) {
@@ -9,10 +19,8 @@ app.config(function ($urlRouterProvider, $locationProvider) {
     // If we go to a URL that ui-router doesn't have registered, go to the "/" url.
     $urlRouterProvider.otherwise('/');
 });
-    // for preloader
-app.controller('Maincontroller', function ($scope) {
-    $rootScop
-});
+
+
 // This app.run is for controlling access to specific states.
 app.run(function ($rootScope, AuthService, $state) {
 

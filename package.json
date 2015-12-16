@@ -1,7 +1,7 @@
 {
   "name": "Danrlabrie",
   "version": "1.0.0",
-    "engines": {
+  "engines": {
     "node": "^0.12.8"
   },
   "description": "My personal website",
@@ -25,6 +25,7 @@
     "cookie-parser": "^1.3.4",
     "express": "^4.12.0",
     "express-session": "^1.10.3",
+    "ghost": "^0.7.2",
     "gulp": "^3.8.11",
     "gulp-babel": "^5.1.0",
     "gulp-concat": "^2.5.2",
@@ -39,6 +40,7 @@
     "gulp-sass": "^1.3.3",
     "gulp-sourcemaps": "^1.3.0",
     "gulp-uglify": "^1.1.0",
+    "https": "^1.0.0",
     "karma": "^0.12.31",
     "karma-chai": "^0.1.0",
     "karma-coverage": "^0.2.7",

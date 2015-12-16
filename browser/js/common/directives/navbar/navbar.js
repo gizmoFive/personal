@@ -7,11 +7,10 @@ app.directive('navbar', function () {
         link: function (scope) {
 
             scope.items = [
-                { label: 'Home', state: 'home' },
-                { label: 'About', state: 'about' },
-                { label: 'Projects', state: 'projects' },
-                { label: 'Snippets', state: 'snippets' },
-                { label: 'Just for fun', state: 'fun' }
+                { label: 'About Me', state: 'about' },
+                { label: 'Portfolio', state: 'projects' },
+                { label: 'Get in Touch', state: 'contact' },
+                { label: 'Blog', state: 'blog' }
             ];
         }
 
