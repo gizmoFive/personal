@@ -8,8 +8,9 @@ app.config(function ($stateProvider) {
                     scrollTop: 0
                 }, 0);
         },
-        onExit: function ($rootScope) {
+        onExit: function ($rootScope, $state) {
           $rootScope.hidden = false;
+          
         }
     });
 });

@@ -10,6 +10,12 @@ app.config(function ($stateProvider) {
         },
         onExit: function ($rootScope) {
           $rootScope.hidden = false;
+          setTimeout(function () {
+          $('html, body').animate({
+                    scrollTop: $("#projects").offset().top
+                }, 0);
+            
+          }, 0);
         }
     });
 });
