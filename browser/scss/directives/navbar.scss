@@ -20,6 +20,18 @@ navbar {
     fill: white;
   }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .logo {
+      height: 8vw;
+      width: 8vw;
+      margin-top: -15px;
+      fill: white;
+    }
+    .atomball {
+      opacity: 0;
+    }
+}
+
 
   a {
     color: black;
