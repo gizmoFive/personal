@@ -10,7 +10,8 @@ app.directive('navbar', function () {
                 { label: 'About Me', state: 'about' },
                 { label: 'Portfolio', state: 'projects' },
                 { label: 'Get in Touch', state: 'contact' },
-                { label: 'Blog', state: 'blog' }
+                { label: 'Blog', state: 'blog' },
+                { label: 'Code', state: 'code' }
             ];
         }
 

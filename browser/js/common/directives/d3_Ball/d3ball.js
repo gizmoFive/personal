@@ -1,36 +1,47 @@
-  app.directive('d3Ball', ['d3Service', function(d3Service) {
+  app.directive('wheelieselector', ['d3Service', function(d3Service) {
     return {
       restrict: 'EA',
       scope: {},
-      link: function() {
+      templateUrl: 'js/common/directives/d3_Ball/d3_Ball.html',
+      link: function(scope) {
+        scope.updateValues = function(s) {
+          d3Service.d3().then(function(d3) {
+            d3.select('#thingy').append('square').style('height', '300px').style('height', '300px');
+          });
+        };
+        scope.$watch('r', function (newval, oldval){
+          console.log('hit watch function radius', oldval, newval);
+          d3Service.d3().then(function(d3) {
+            d3.select('circle').attr('r', newval);
+          });
+        });
+          scope.$watch('cx', function (newval, oldval){
+          console.log('hit watch function cx', oldval, newval);
+          d3Service.d3().then(function(d3) {
+            d3.select('circle').attr('cx', newval);
+          });
+        });
+          scope.$watch('cy', function (newval, oldval){
+          console.log('hit watch function cy', oldval, newval);
+          d3Service.d3().then(function(d3) {
+            d3.select('circle').attr('cy', newval);
+          });
+        });
+        scope.$watch('color', function (newval, oldval){
+          console.log('hit watch function', oldval, newval);
+          d3Service.d3().then(function(d3) {
+            d3.select('circle').style('fill', newval);
+          });
+        });
         d3Service.d3().then(function(d3) {
           var colors = ['purple', 'orange', 'red', 'yellow', 'blue', 'pink'];
-          for(var i=0; i < 100; i++) {
             d3.select("#thingy")
             .append("circle")
-            .attr("cx", 8+(5*i))
-            .attr("cy", 8)
-            .attr("r", 8)
+            .attr("cx", scope.cx || 300)
+            .attr("cy", scope.cy || 300)
+            .attr("r", scope.r || 100) 
             .style("position", "absolute")
-            .style("fill", colors[(i % colors.length)])
-           
-          
-        }
-          setInterval(function() {
-            d3.selectAll("circle")
-            .transition()
-            .delay(400)
-            .duration(2000)
-            .attr('cx',Math.floor(Math.random(0,400)))
-            .attr('cy',Math.floor(Math.random(0,400)))
-            .attr('r', Math.floor(Math.random(0,30)));
-          }, 1000);
-          // if(d3.selectAll('circle')[0].attr("r") === 30) {
-          //   console.log("got this far!");
-          // }
-
-
-        
+            .style("fill", 'red');
 
         });
       }};

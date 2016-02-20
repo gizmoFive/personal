@@ -17,9 +17,7 @@ app.config(function($stateProvider) {
 app.controller('projectcontroller', function ($rootScope, $scope) {
 
     $scope.changejumbo = function(num) {
-        console.log(num);
         var $target = $('#li' + num);
-        console.log($target);
         $target.click();
     };
 });

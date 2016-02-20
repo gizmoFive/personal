@@ -3,15 +3,7 @@
 //hide loader
 $('#preloader').css("display", "none");
 
-// $(document).on('scroll', function() {
-//     var scrollpos = $(document).scrollTop();
-//     if(scrollpos === 0) window.history.pushState("/", "Daniel Labrie", "/");
-//     else if(scrollpos >= $("#about").offset().top - 75 && scrollpos <= $("#about").offset().top + 75) window.history.pushState('/about', "Daniel Labrie - about", "/about");
-//     else if(scrollpos >= $("#projects").offset().top - 25 && scrollpos <= $("#projects").offset().top + 10) window.history.pushState('/projects', "Daniel Labrie - projects", "/projects");
-//     else if(scrollpos >= $("#footer").offset().top - 5) window.history.pushState('/contact', "Daniel Labrie - contact", "/contact");
-// })
-
-window.app = angular.module('FullstackGeneratedApp', ['ui.router', 'ui.bootstrap', 'fsaPreBuilt', 'd3']);
+window.app = angular.module('FullstackGeneratedApp', ['ui.router', 'fsaPreBuilt', 'd3']);
 
 app.config(function ($urlRouterProvider, $locationProvider) {
     // This turns off hashbang urls (/#about) and changes it to something normal (/about)

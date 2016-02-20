@@ -172,3 +172,45 @@ background-color: rgb(90,90,95);
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.funlogo {
+  display: inline-block;
+  padding: 30px;
+  margin: 45px;  
+  border: 4px solid white; 
+  border-radius: 100px; 
+  position: relative;
+  left: 5vw; 
+  cursor: pointer;
+  height: 200px; 
+  width: 200px; 
+}
+
+@keyframes baloon {
+  from {border-color: white;
+       };
+  to {border-color: tomato;
+        transform: scale(1.1);
+  };
+}
+
+
+.funlogo:hover {
+  animation-name: baloon;
+  animation-duration: 1.25s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+}
+
+.messagetxt {
+  position: absolute;  
+  text-decoration: none;
+  color: white; 
+  font-weight: 900; 
+  font-size: 2em; 
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

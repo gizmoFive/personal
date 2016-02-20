@@ -25,7 +25,6 @@ app.controller('blogctrl', function($scope) {
       }
       else {
       objIframe.style.height = '0';
-      console.log(event.data);
       $blog.css('height', event.data);
       }
     };
