@@ -9,11 +9,11 @@ app.config(function ($stateProvider) {
         onExit: function ($rootScope) {
           $rootScope.hidden = false;
         },
-        controller: 'compscirctrl'
+        controller: 'compscictrl'
     });
 });
 
 
 app.controller('compscictrl', function ($scope) {
-
+ $scope.thingy=0;
 });

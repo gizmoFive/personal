@@ -173,6 +173,8 @@ background-color: rgb(90,90,95);
   margin-right: 10px;
 }
 
+// code state
+
 .funlogo {
   display: inline-block;
   padding: 30px;
@@ -214,3 +216,30 @@ background-color: rgb(90,90,95);
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+// gol
+
+#board{
+  margin: 0 auto;
+}
+
+#board td{
+  border: 1px solid #ddd;
+  width: 18px;
+  height: 18px;
+}
+
+td.alive {
+  background-color: #8CC8DD;
+}
+
+td.dead {
+  background-color: #fff;
+}
+
+#control_panel {
+  margin: 10px auto;
+  text-align: center;
+}
+
+//end gol

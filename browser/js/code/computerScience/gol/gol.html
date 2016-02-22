@@ -1,0 +1,26 @@
+<div style='padding-top: 20px;'></div>
+<section class="project_sub">
+    <div class="container">
+        <div class="container description">
+            <p >
+                <h3 style="display: inline;">Description:</h3> <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a>
+            </p>
+        </div>
+        <div class="container description" style="margin-top: 15px; margin-bottom: 50px;">
+            <div style="height: 5px;"></div>
+            <table id='board'></table>
+            <div id='control_panel'>
+                <button id='step_btn' class='btn btn-success'>Step</button>
+                <button ng-click "changeplay()" id='play_btn' class='btn btn-primary'>{{playval}}</button>
+                <button id='reset_btn' class='btn btn-warning'>Reset Random</button>
+                <button id='clear_btn' class='btn btn-info'>Clear</button>
+            </div>
+            <form style="color: black;">
+                <input ng-model="golwidth">Width</input>
+                <input ng-model="golheight">Height</input>
+            </form>
+            <div style="height: 5px;"></div>
+            <br></br>
+        </div>
+    </div>
+</section>
