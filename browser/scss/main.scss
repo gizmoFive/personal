@@ -221,10 +221,17 @@ background-color: rgb(90,90,95);
 
 #board{
   margin: 0 auto;
+  min-height: 400px;
+  max-height: 500px;
 }
 
+.novertical {
+  display: table;
+  height: 800px;
+
+}
 #board td{
-  border: 1px solid #ddd;
+  border: 1px solid white;
   width: 18px;
   height: 18px;
 }
@@ -234,12 +241,14 @@ td.alive {
 }
 
 td.dead {
-  background-color: #fff;
+  background-color: rgba(100,100,100,0.8);
 }
 
 #control_panel {
   margin: 10px auto;
   text-align: center;
+  color: white;
 }
+
 
 //end gol

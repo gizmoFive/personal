@@ -14,22 +14,34 @@ app.config(function ($stateProvider) {
 });
 
 
-app.controller('golctrl', function ($scope, $q) {
+app.controller('golctrl', function ($scope) {
 
+var hasrun = false;
+$scope.playval = 'Play';
+$scope.golheight = $scope.golwidth = 25;
 
-
+function heightWidthChange (height, width) {
+if(hasrun) {  
+   var element = document.getElementsByTagName("tbody")[0];
+   element.parentNode.removeChild(element);
+   gameOfLife.height = $scope.golheight;
+   gameOfLife.width = $scope.golwidth;
+   gameOfLife.createAndShowBoard();
+   }
+   hasrun = true;
+}
 $scope.$watch('golheight', function() {
-   // gameOfLife.height = $scope.golheight;
+    heightWidthChange($scope.golheight, $scope.golwidth);
 });
 
 $scope.$watch('golwidth', function() {
-   // gameOfLife.width = $scope.golwidth;
+   heightWidthChange($scope.golheight, $scope.golwidth);
 });
 
 
 var gameOfLife = {
-  width: $scope.golwidth || 50,
-  height: $scope.golheight || 50,
+  width: $scope.golwidth,
+  height: $scope.golheight,
   stepInterval: null,
 
   createAndShowBoard: function () {
@@ -140,10 +152,6 @@ var gameOfLife = {
     });
   },
   step: function () {
-    // You need to:
-    // 1. Count alive neighbors for all cells
-    // 2. Set the next state of all cells based on their alive neighbors
-    
     this.forEachCell(function(cell, x, y) {
       var aliveNeighbors = 0, neigh_id, ncell;
 
@@ -190,7 +198,7 @@ var gameOfLife = {
         var self = this;
         this.stepInterval = setInterval(function() {
             self.step();
-        }, 200);
+        }, (1000 / $scope.playspeed));
     } else {
         clearInterval(this.stepInterval);
         this.stepInterval = null;
@@ -202,12 +210,27 @@ var gameOfLife = {
         $scope.playval = 'Play';
          $('#play_btn').css({'background-color': '#337ab7'});
     }
-}
+    $scope.$digest();
+},
+  loadpreset: function(name) {
+        this.clearBoard();
+        this.forEachCell(function(cell) {
+      if (name.indexOf(cell.id) !== -1) {
+        cell.className = "alive";
+        cell.setAttribute('data-status', 'alive');
+      } else {
+        cell.className = "dead";
+        cell.setAttribute('data-status', 'dead');
+      }
+    });
+    }
 
 };
 
-
-$scope.playval = 'Play';
+$scope.playspeed = 2;
+$scope.$watch('playspeed', function(){
+    
+});
 
   gameOfLife.createAndShowBoard();
 });
