@@ -19,6 +19,14 @@
                 <input class="customization" type='range' min='10' max='100' ng-model="golwidth">Width: {{golwidth}}</input>
                 <input class="customization" type='range' min='10' max='100' ng-model="golheight">Height: {{golheight}}</input>
                 <input class="customization" type='range' min='1' max='60' ng-model="playspeed">Playspeed: {{playspeed}} (Frames per Second)</input>
+                <label style="margin-left: -5px; padding: 5px;">Select a preset:
+                <select ng-model="preset" style="color: black;" value="select preset">
+                	<option>Gosper Glider Gun</option>
+                	<option>Flippers</option>
+                	<option>10-cell Stable</option>
+                	<option>Glider Collider</option>
+                </select>
+                </label>
             </form>
             <div style="height: 5px;"></div>
             <br></br>
