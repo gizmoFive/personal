@@ -5,12 +5,12 @@
 <div class="container interest_sections" style="width: 90vw; margin-left: 10vw;">
     <h3 style="color: white;">Code Examples from things I'm interested in:</h3>
     <div style="display: inline-block;" ng-repeat="interest in interests">
-        <a ng-mouseenter="mouseenterfn()" ng-mouseleave="mouseleavefn()" ui-sref='{{interest.name}}'>
-            <div class="funlogo" style="background: no-repeat center/70% url({{interest.url}});"> 	
+        <a ng-click="runfunction()" ng-mouseenter="mouseenterfn()" ng-mouseleave="mouseleavefn()">
+            <div class="funlogo" id="{{interest.name}}" style="background: no-repeat center/70% url({{interest.url}});"> 	
                 <div class="messagetxt" ng-hide='interest.url'>{{interest.message}}</div>
             </div>
         </a>
-    </div>S
+    </div>
 </div>
 
 

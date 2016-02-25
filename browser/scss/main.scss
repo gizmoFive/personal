@@ -217,6 +217,8 @@ background-color: rgb(90,90,95);
   transform: translate(-50%, -50%);
 }
 
+//end code state
+
 // gol
 
 #board{
@@ -237,7 +239,7 @@ background-color: rgb(90,90,95);
 }
 
 td.alive {
-  background-color: #8CC8DD;
+  background-color: #FEFDFA;
 }
 
 td.dead {
@@ -250,5 +252,5 @@ td.dead {
   color: white;
 }
 
-
 //end gol
+
