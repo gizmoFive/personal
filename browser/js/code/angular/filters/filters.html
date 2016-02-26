@@ -1,0 +1,48 @@
+<div style='padding-top: 20px;'></div>
+<section class="project_sub" style="color: white;">
+    <div class="container novertical">
+        <div class="container description">
+            <p >
+                <h3 style="display: inline;">Description:</h3> Filters playground! Mess around with interpolated angular values with native filters and some fancy custom ones that I wrote.
+            </p>
+        </div>
+        <div class="container description" style="margin-top: 15px; margin-bottom: 50px;">
+            <div style="height: 5px;"></div>
+  				<pre> {{ applyFilter(currentText, myFilter) }}</pre>
+            <div style="height: 5px;"></div>
+            <br></br>
+        </div>
+        <textarea id="theTextArea" style="display: block; position: relative; overflow: hidden; border-radius: 10px; color: black; height: 20vh; width: 60vw; margin-left: auto; margin-right: auto" ng-model="userText"></textarea>
+        Enter your own input above or <label style="color: white; margin-left: -5px; padding: 5px;">Select a preset:</label>
+                <select ng-model="myInput" style="color: black;" value="select preset">
+                	<option>ipsum</option>
+                	<option>hipsum</option>
+                	<option>testNumber</option>
+                	<option>testArray</option>
+                	<option>testObject</option>
+                </select>
+         <label style="display: block; margin-left: -5px; padding: 5px;">Select a filter:
+                <select ng-model="myFilter" style="color: black;" value="select preset">
+                	<optgroup label="for text:">
+                		<option>uppercase</option>
+                		<option>lowercase</option>
+                		<option>reverse</option>
+                		<option>deletePunctuation</option>
+                		<option>onlyPunctuation</option>
+                	</optgroup>
+                	<optgroup label="for numbers:">
+                		<option>number</option>
+                		<option>currency</option>
+                	</optgroup>
+                	<optgroup label="for objects and arrays:">
+                		<option>json</option>
+                		<option>sort</option>
+                		<option>unique</option>
+                		<option>truthy</option>
+                		<option>falsy</option>
+                	</optgroup>
+                </select>
+          </label>
+    </div>
+</section>
+
