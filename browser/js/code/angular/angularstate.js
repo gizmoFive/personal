@@ -8,12 +8,7 @@ app.config(function ($stateProvider) {
         },
         onExit: function ($rootScope) {
           $rootScope.hidden = false;
-        },
-        controller: 'angularctrl'
+        }
     });
 });
 
-
-app.controller('angularctrl', function ($scope) {
-
-});

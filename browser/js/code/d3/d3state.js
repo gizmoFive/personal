@@ -8,12 +8,6 @@ app.config(function ($stateProvider) {
         },
         onExit: function ($rootScope) {
           $rootScope.hidden = false;
-        },
-        controller: 'd3ctrl'
+        }
     });
-});
-
-
-app.controller('d3ctrl', function ($scope) {
-
 });

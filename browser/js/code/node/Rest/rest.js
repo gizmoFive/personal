@@ -8,12 +8,6 @@ app.config(function ($stateProvider) {
         },
         onExit: function ($rootScope) {
           $rootScope.hidden = false;
-        },
-        controller: 'restctrl'
+        }
     });
-});
-
-
-app.controller('restctrl', function ($scope, $filter) {
-
 });

@@ -50,35 +50,6 @@ d3Service.d3().then(function(d3) {
         .domain([0, height])
         .range([height, 0]);
 
-    var svg = d3.select(".d3box").append("svg")
-        .attr("width", width)
-        .attr("height", height)
-        .attr('class', "bubble")
-        .attr('viewBox', '0 0 ' + width + ' ' + height)
-        .attr('preserveAspectRatio', 'xMidYMid meet')
-        .append("g")
-        .call(d3.behavior.zoom().x(x).y(y).scaleExtent([1, 8]).on("zoom", zoom));
-
-     svg.append("rect")
-    .attr("class", "overlay")
-    .attr("width", width)
-    .attr("height", height);
-
-   var circle = svg.selectAll("circle")
-    .data($scope.planetData)
-    .enter().append("circle")
-    .attr("r", getSize)
-    .attr('id', getId)
-    .attr('class', 'planet')
-    .attr("fill", getColor)
-    .attr("transform", transform)
-    .on('mouseover', function() {
-        svg.selectAll("circle").data($scope.planetData).append('title').text(function(d) {
-        if(d[6] === 'Earth') return (d[6] +  '\n' + 'Temperature: ' + (d[7] || 'N/A') + ' Kelvin' );
-        else return (d[6] + '\n'  + 'Distance: ' + parseInt(d[4]) + ' Parsecs (' + parseInt(d[4]*3.26156) + ' Light Years)' + '\n' + 'Size: ' + d[8] + ' Earth radii' + '\n' + 'Temperature: ' + (d[7] || 'N/A') + ' Kelvin' );
-        });
-    });
-
     function getId(d) {
         return d[6];
     }
@@ -86,8 +57,7 @@ d3Service.d3().then(function(d3) {
         return Number(d[8]);
     }
     function getColor(d) {
-        var temp = d[7] / 100,
-        red, green, blue;
+        var temp = d[7] / 100;
         if(!temp) return 'white';
    else if(temp <= 0.25) return '#799FFF';
    else if(temp > 0.25 && temp <= 0.5 ) return '#89A9F6';
@@ -120,17 +90,42 @@ d3Service.d3().then(function(d3) {
    else if(temp > 26 && temp <= 27 ) return '#CF1020';
    else if(temp > 27) return '#CF1020';
     }
-
+    function transform(d) {
+    return "translate(" + x(Math.cos(Number(d[2])) * Number(d[4]) +580) + "," + y(Math.sin(Number(d[2])) * Number(d[4])+800) + ")";
+    }
     function zoom() {
     circle.attr("transform", transform);
     }
 
-    function transform(d) {
-    return "translate(" + x(Math.cos(Number(d[2])) * Number(d[4]) +580) + "," + y(Math.sin(Number(d[2])) * Number(d[4])+800) + ")";
-    }
+    var svg = d3.select(".d3box").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .attr('class', "bubble")
+        .attr('viewBox', '0 0 ' + width + ' ' + height)
+        .attr('preserveAspectRatio', 'xMidYMid meet')
+        .append("g")
+        .call(d3.behavior.zoom().x(x).y(y).scaleExtent([1, 8]).on("zoom", zoom));
 
+     svg.append("rect")
+    .attr("class", "overlay")
+    .attr("width", width)
+    .attr("height", height);
+
+   var circle = svg.selectAll("circle")
+    .data($scope.planetData)
+    .enter().append("circle")
+    .attr("r", getSize)
+    .attr('id', getId)
+    .attr('class', 'planet')
+    .attr("fill", getColor)
+    .attr("transform", transform)
+    .on('mouseover', function() {
+        svg.selectAll("circle").data($scope.planetData).append('title').text(function(d) {
+        if(d[6] === 'Earth') return (d[6] + '\n' + 'Temperature: ' + (d[7] || 'N/A') + ' Kelvin' );
+        else return (d[6] + '\n' + 'Distance: ' + parseInt(d[4]) + ' Parsecs (' + parseInt(d[4]*3.26156) + ' Light Years)' + '\n' + 'Size: ' + d[8] + ' Earth radii' + '\n' + 'Temperature: ' + (d[7] || 'N/A') + ' Kelvin' );
+        });
+    });
     d3.select('#earth').attr('fill', 'lightblue');
-
 });
 
 });

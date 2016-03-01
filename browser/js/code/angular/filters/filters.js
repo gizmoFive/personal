@@ -47,7 +47,7 @@ Drinking vinegar gastropub neutra, celiac biodiesel forage readymade migas photo
 }
 };
 
-$scope.currentText = $scope.exampleText['ipsum'];
+$scope.currentText = $scope.exampleText.ipsum;
 
 $scope.myFilter = 'lowercase';
  $scope.applyFilter = function(model, filter) {
@@ -68,7 +68,7 @@ $scope.$watch('myInput', function() {
     if(hasrun1) {        
     $scope.currentText = $scope.exampleText[$scope.myInput];
     }
-    hasrun1 =  true;
+    hasrun1 = true;
 });
 
 

@@ -4,7 +4,7 @@
       scope: {},
       templateUrl: 'js/common/directives/d3_Ball/d3_Ball.html',
       link: function(scope) {
-        scope.updateValues = function(s) {
+        scope.updateValues = function() {
           d3Service.d3().then(function(d3) {
             d3.select('#thingy').append('square').style('height', '300px').style('height', '300px');
           });
@@ -34,7 +34,6 @@
           });
         });
         d3Service.d3().then(function(d3) {
-          var colors = ['purple', 'orange', 'red', 'yellow', 'blue', 'pink'];
             d3.select("#thingy")
             .append("circle")
             .attr("cx", scope.cx || 300)

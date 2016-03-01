@@ -8,12 +8,6 @@ app.config(function ($stateProvider) {
         },
         onExit: function ($rootScope) {
           $rootScope.hidden = false;
-        },
-        controller: 'nodectrl'
+        }
     });
-});
-
-
-app.controller('nodectrl', function ($scope) {
-
 });

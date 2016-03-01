@@ -8,7 +8,7 @@ app.config(function ($stateProvider) {
                     scrollTop: 0
                 }, 0);
         },
-        onExit: function ($rootScope, $state) {
+        onExit: function ($rootScope) {
           $rootScope.hidden = false;
            setTimeout(function () {
           $('html, body').animate({

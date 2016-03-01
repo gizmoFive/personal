@@ -1,13 +1,11 @@
 'use strict';
 var router = require('express').Router();
-var mongoose = require('mongoose');
 var Promise = require('bluebird');
-var _ = require('lodash');
 var papaparse = Promise.promisify(require('papaparse').parse);
 var readFile = Promise.promisify(require('fs').readFile);
 module.exports = router;
 
-router.get('/exoplanets', function(req, res, next) {
+router.get('/exoplanets', function(req, res) {
     readFile('planets.csv', 'utf-8')
         .then(function(data) {
             var parseData;

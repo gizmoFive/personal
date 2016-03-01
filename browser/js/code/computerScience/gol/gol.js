@@ -14,13 +14,13 @@ app.config(function ($stateProvider) {
 });
 
 
-app.controller('golctrl', function ($scope, $q) {
+app.controller('golctrl', function ($scope) {
 
 var hasrun = false;
 $scope.playval = 'Play';
 $scope.golheight = $scope.golwidth = 25;
 
-function heightWidthChange (height, width) {
+function heightWidthChange () {
 if(hasrun) {  
    var element = document.getElementsByTagName("tbody")[0];
    element.parentNode.removeChild(element);
@@ -31,11 +31,11 @@ if(hasrun) {
    hasrun = true;
 }
 $scope.$watch('golheight', function() {
-    heightWidthChange($scope.golheight, $scope.golwidth);
+    heightWidthChange();
 });
 
 $scope.$watch('golwidth', function() {
-   heightWidthChange($scope.golheight, $scope.golwidth);
+   heightWidthChange();
 });
 
 
@@ -180,7 +180,6 @@ var gameOfLife = {
       } else if (currState == "dead" && numNeighbors === 3) {
         nextState = "alive";
       }
-
       return nextState;
     };
 
@@ -235,7 +234,7 @@ var presetObj = {
     'Glider Collider' : [29,26,'1-0','27-0','2-1','26-1','0-2','1-2','2-2','26-2','27-2','28-2','0-23','1-23','2-23','26-23','27-23','28-23','2-24','26-24','1-25','27-25']
 };
 $scope.$watch('preset', function() {
-    var mypromise = new Promise(function (resolve, reject) {
+    var mypromise = new Promise(function (resolve) {
     var pre = presetObj[$scope.preset];
     $scope.golwidth = pre[0];
     $scope.golheight = pre[1];
