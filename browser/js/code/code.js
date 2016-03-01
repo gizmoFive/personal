@@ -46,10 +46,10 @@ $scope.mouseleavefn = function () {
 
 $scope.runfunction = function() {
         var that = this;
-        $('#' + that.interest.name).fadeOut('slow', $q(function(resolve, reject) {
+        $('#' + that.interest.name).fadeOut('slow', $q(function (resolve) {
                 resolve(that);
-                }).then(function(that) {
-                    $state.go(that.interest.name);
+                }).then(function (resolved) {
+                    $state.go(resolved.interest.name);
                 }));
 
 };

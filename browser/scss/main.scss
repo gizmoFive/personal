@@ -254,3 +254,38 @@ td.dead {
 
 //end gol
 
+// exoplanets
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+
+@keyframes earthanimate {
+  0% {  stroke-opacity: 1;
+        stroke-width: 10px;
+       };
+  50% {
+        stroke-opacity: 0.8;
+  }
+  80% {
+        stroke-opacity: 0.5;
+  }
+  100% {
+    stroke-opacity: 0;
+    stroke-width: 150px;
+  };
+}
+
+#earth {
+  stroke: dodgerblue;
+  animation-name: earthanimate;
+  animation-duration: 1.25s;
+  animation-iteration-count: infinite;
+}
+
+.planet:hover {
+ fill: cyan;
+}
+//
