@@ -101,8 +101,15 @@ var gameOfLife = {
         cell.setAttribute('data-status', 'alive');
     };
     var board = document.getElementById('board');
+    board.addEventListener('touchstart', function() {
+      board.addEventListener('touchmove', makeAlive);
+    });
+    board.addEventListener('touchend', function() {
+      board.removeEventListener('touchmove');
+    });
     board.onmousedown = function() {
       board.onmousemove = makeAlive;
+      board.addEventListener('touchstart');
     };
     board.onmouseup = function() {
       board.onmousemove = null;
