@@ -74,7 +74,8 @@ d3Service.d3().then(function(d3) {
     .attr("transform", transform)
     .on('mouseover', function() {
         svg.selectAll("circle").data($scope.planetData).append('title').text(function(d) {
-        return (d[6] + '\n'  + 'Distance: ' + parseInt(d[4]) + ' Parsecs (' + parseInt(d[4]*3.26156) + ' Light Years)' + '\n' + 'Size: ' + d[8] + ' Earth radii' + '\n' + 'Temperature: ' + (d[7] || 'N/A') + ' Kelvin' );
+        if(d[6] === 'Earth') return (d[6] +  '\n' + 'Temperature: ' + (d[7] || 'N/A') + ' Kelvin' );
+        else return (d[6] + '\n'  + 'Distance: ' + parseInt(d[4]) + ' Parsecs (' + parseInt(d[4]*3.26156) + ' Light Years)' + '\n' + 'Size: ' + d[8] + ' Earth radii' + '\n' + 'Temperature: ' + (d[7] || 'N/A') + ' Kelvin' );
         });
     });
 
