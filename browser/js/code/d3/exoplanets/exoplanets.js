@@ -1,8 +1,5 @@
 app.factory('exoFactory', function ($http) {
     return {
-        logit: function() {
-            console.log('factoryworking');
-        },
         getData: function() {
            return $http.get('api/d3/exoplanets').then(function (res) {
                 return res.data;
@@ -36,10 +33,11 @@ app.controller('exoctrl', function ($scope, exoFactory, planetdata, d3Service) {
     $scope.planetData = planetdata.data.slice(13,(planetdata.data.length)).filter(function (datum) {
         return(datum[4] && datum[8]);
     });
-    console.log($scope.planetData);
 
 d3Service.d3().then(function(d3) {
-    var width = 1160;
+    var d3box = document.getElementsByClassName('d3box')[0];
+
+    var width = d3box.offsetWidth-10;
     var height = 1600;
 
     var x = d3.scale.linear()

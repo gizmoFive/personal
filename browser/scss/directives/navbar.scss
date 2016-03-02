@@ -33,6 +33,7 @@ navbar {
 }
 
 
+
   a {
     color: black;
     font-size: 16px;
@@ -61,27 +62,73 @@ navbar {
     }
   }
 
-  .fa-linkedin-square {
-    font-size: 5vw;
+  .fa {
     color: white;
+    font-size: 5vw;
+    margin-left: 2.5vw; 
+    margin-top: 70px
+  }
+
+  .fa-linkedin-square {
     &:hover {
       color: #f31214;
     }
   }
-
+  .fa-bars {
+    display: none;
+  }
   .fa-github{
-    font-size: 5vw;
-    color: white;
     &:hover {
       color: #f31214;
     }
   }
   
   .fa-angellist{
-    font-size: 5vw;
-    color: white;
     &:hover {
       color: #f31214;
     }
   }
+
 }
+.navbar_horizontal {
+  display: none;
+  position: fixed;
+  background: rgba(49,49,49, 1);
+  border-bottom: 1px solid black;
+  height: 10vh;
+  width: 90vw;
+  margin-left: 10vw;
+
+  .nav > li > a {
+    font-size: 1vw;
+    margin-left: 0px;
+    cursor: pointer;
+    transition: color 0.2s;
+    &.active {
+      color: darken(#f31214, 10%);
+    }
+    &:hover {
+      background: rgba(0,3,4,0.2);
+      color: #f31214;
+    }
+    &:focus {
+      background: none;
+    }
+}
+}
+
+// @media (max-width: 980px) {
+//     navbar {
+//       .fa-bars {
+//         display: block;
+//       }
+//         .nav > li > a {
+//             display: none;
+//         }
+//     }
+//     .navbar_horizontal {
+//         display: block;
+//     }
+// }
+
+
