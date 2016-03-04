@@ -7,6 +7,7 @@ module.exports = router;
 router.get('/', function(req, res) {
     readFile('Dan_Labrie_Resume.pdf')
         .then(function(results) {
+            res.contentType("application/pdf");
             res.status(200).send(results);
         })
         .catch(function(e) {

@@ -32,5 +32,6 @@ app.config(function ($stateProvider) {
 
 
 app.controller('resumectrl', function ($scope, resume, $sce) {
+
        $scope.resume = $sce.trustAsResourceUrl(resume);
 });
