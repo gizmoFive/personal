@@ -1,12 +1,11 @@
-app.config(function ($stateProvider) {
-    $stateProvider.state('angular', {
-        url: '/code/angular',
-        templateUrl: 'js/code/angular/angularstate.html',
-        onEnter: function ($rootScope) {
+app.config( ($stateProvider) => {
+    $stateProvider.state(`angular`, {
+        url: `/code/angular`,
+        templateUrl: `js/code/angular/angularstate.html`,
+        onEnter: ($rootScope) => {
           $rootScope.hidden = true;
-          
         },
-        onExit: function ($rootScope) {
+        onExit: ($rootScope) => {
           $rootScope.hidden = false;
         }
     });

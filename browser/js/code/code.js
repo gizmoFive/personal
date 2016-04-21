@@ -4,7 +4,6 @@ app.config(function ($stateProvider) {
         templateUrl: 'js/code/code.html',
         onEnter: function ($rootScope) {
           $rootScope.hidden = true;
-          
         },
         onExit: function ($rootScope) {
           $rootScope.hidden = false;
