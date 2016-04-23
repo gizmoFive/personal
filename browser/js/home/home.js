@@ -2,10 +2,15 @@ app.config(function($stateProvider) {
 
     $stateProvider.state('home', {
         url: '/',
-        onEnter: function() {
-            $('html, body').animate({
-                scrollTop: $("#top").offset().top
-            }, 1000);
+       	onEnter: ($document, $rootScope) => {
+	        $rootScope.unAnimated = true;
+	        const top = angular.element(document.getElementById('top'))
+	        setTimeout(function() {
+	          $document.scrollToElementAnimated(top, 0, 800)
+	        }, 0)
         },
+      	onExit: ($rootScope) => {
+	        $rootScope.unAnimated = false;
+      }
     });
 });

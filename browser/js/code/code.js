@@ -44,12 +44,8 @@ $scope.mouseleavefn = function () {
 };
 
 $scope.runfunction = function() {
-        var that = this;
-        $('#' + that.interest.name).fadeOut('slow', $q(function (resolve) {
-                resolve(that);
-                }).then(function (resolved) {
-                    $state.go(resolved.interest.name);
-                }));
+       $state.go(this.interest.name)
+      
 
 };
 

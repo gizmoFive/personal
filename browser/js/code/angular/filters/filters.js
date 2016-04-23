@@ -73,8 +73,7 @@ $scope.$watch('myInput', function() {
 
 
 $scope.runthisfunc = function() {
-   console.log('jqthis', $('#theTextArea')[0].value);
-   $scope.currentText = $('#theTextArea')[0].value;
+   $scope.currentText = document.getElementById('theTextArea').value;
    $scope.applyFilter($scope.currentText, $scope.myFilter);
 };
 });

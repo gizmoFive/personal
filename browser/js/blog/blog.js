@@ -15,17 +15,15 @@ app.config(($stateProvider) => {
 
  
 app.controller(`blogctrl`, ($scope) => {
-    var $blog = $(`#blog`);
-    $scope.doneloading = false;
-    var objIframe = document.getElementById(`blog`);    
+    const $blog = document.getElementById('blog');
+    $scope.doneloading = false;   
     window.onmessage = (event) => {
       if (event.data == `doneloading`) { 
         $scope.doneloading = true;
         $scope.$digest();
       }
       else {
-        objIframe.style.height = `0`;
-        $blog.css(`height`, event.data);
+        $blog.style.height = '100vh'
       }
     };
 });

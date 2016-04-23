@@ -243,9 +243,11 @@ var presetObj = {
 $scope.$watch('preset', function() {
     var mypromise = new Promise(function (resolve) {
     var pre = presetObj[$scope.preset];
+    if(pre){
     $scope.golwidth = pre[0];
     $scope.golheight = pre[1];
     resolve(pre);
+  }
 }).then(function (pre) {
     gameOfLife.loadpreset(pre);
 });

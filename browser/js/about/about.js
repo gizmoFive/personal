@@ -1,14 +1,16 @@
 app.config(($stateProvider) => {
 
-    $stateProvider.state(`about`, {
-        url: `/about`,
-        onEnter: () => {
-          const scrollpos = $(document).scrollTop();
-          if (scrollpos < $(`#about`).offset().top - 75 || scrollpos > $(`#about`).offset().top + 75) {
-            $(`html, body`).animate({
-                scrollTop: $(`#about`).offset().top -70
-            }, 1000);
-          }
+  $stateProvider.state(`about`, {
+      url: `/about`,
+      onEnter: ($document, $rootScope) => {
+        $rootScope.unAnimated = true;
+        const about = angular.element(document.getElementById('about'))
+        setTimeout(function() {
+          $document.scrollToElementAnimated(about, 100, 800)
+        }, 0)
         },
-    });
+      onExit: ($rootScope) => {
+        $rootScope.unAnimated = false;
+      }
+  });
 });
