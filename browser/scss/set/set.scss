@@ -1,0 +1,52 @@
+#home {
+	color: white;
+
+	.gameinfo {
+		width: 30vw;
+		display: inline-block;
+	}
+	.setControls{
+		margin-top: 30px;
+		width: 30vw;
+		display: inline-block;
+		float: right;
+
+		pre {
+			margin-top: 10px;
+			height: 100px;
+			width: 100%;
+		}
+	}
+	.card {
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 5px;
+		height: 300px;
+		width: 150px;
+		border: 4px solid black;
+		border-radius: 5px;
+	}
+
+	.striped {
+		background: repeating-linear-gradient(
+	    45deg,
+	    transparent,
+	    transparent 10px,
+	    #ccc 10px,
+	    #ccc 20px
+	  );
+	}
+
+	.open {
+	background: radial-gradient(circle at center, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 75%); 
+	}
+
+	.isclicked {
+		color: cyan;
+		border: 8px solid cyan;
+	}
+
+}

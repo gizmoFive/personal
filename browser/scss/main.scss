@@ -26,6 +26,7 @@ body {
 
 @import 'directives/main';
 @import 'about/main';
+@import 'set/set';
 
 
 
@@ -318,6 +319,9 @@ td.dead {
   min-height: 80vh;
 
 }
+
+
+// ANIMATIONS
 
 .animated {
   &.ng-enter {

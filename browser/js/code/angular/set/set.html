@@ -1,0 +1,52 @@
+<section id="home" class='project_sub'>
+	<div class="container description">
+        <p>
+            <h3 style="display: inline;">Description:</h3> 
+            Angular impelementation of a card game called 'Set'. The object of the game is to find sets of 3
+            cards before time runs out and the computer takes a set. For a set to be valid all 3 of
+            their respective backgrounds, colors, numbers, or shapes must be either all the same or all different.
+			<br>
+			<br>
+			<strong style='text-decoration: underline'>Example Valid Sets:</strong>
+			Solid One Red Diamond, Striped Two Purple Squiggle, Faded Three Green Lemon
+			<br>
+			Solid One Green Squiggle, Solid One Purple Diamond, Solid One Red Lemon
+			<br>
+			<br>
+			<strong style='text-decoration: underline'>Example Invalid Set:</strong>
+			Faded Two Green Diamond, Solid One Green Diamond, Striped Three Red Diamond 
+			<br>
+			* This set is invalid because the 3rd card does not match in color.
+        </p>
+    </div>
+
+    <div class="container description" style="margin-top: 15px; margin-bottom: 50px;">
+        <div style="height: 5px;"></div>
+		
+	<div class='gameinfo'> 
+		<h1>Set</h1>
+		<h3>Your Score: {{playerscore}} </h3>
+		<h3>Computer's Score: {{computerscore}} </h3>
+		<h3>Computer will move in <strong ng-style="{color: playTimer <=10 ? 'red' : 'white'}">{{playTimer}}</strong> seconds </h3>
+	</div>
+	<div class='setControls'>
+		<button class='btn btn-primary' ng-click="cheat()">Give me a Set</button>
+		<button class='btn btn-danger' ng-click="playWholeGame()">Play Entire Game</button>
+		<button class='btn btn-warning' ng-click="logScore()">Log discovered sets</button>
+		<pre>{{message | json}}</pre>
+	</div> 
+	<div class='container'>
+		<div class='row'>
+			<div ng-repeat="card in table track by $index">
+				<div ng-click="cardSelected(this)" ng-class="{striped : card.shading == 'striped', open : card.shading == 'empty', isclicked : this.clicked == true}" class='col-lg-2 col-md-4 col-sm-6 col-xs-12 card' style="background-color: {{card.color}}">
+				<h1 style="display: flex;">{{card.number}}</h1>
+				<i class='fa fa-3x fa-{{card.shape | maptofa}}'></i>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+        <div style="height: 5px;"></div>
+        <br></br>
+    </div>
+</section>

@@ -1,0 +1,9 @@
+var router = require('express').Router();
+import cards from '../../cardGenerator'
+
+module.exports = router;
+
+router.get('/cards', (req,res,next) => {
+  res.status(200).json(cards);
+});
+
