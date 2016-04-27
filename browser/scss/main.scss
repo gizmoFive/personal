@@ -121,7 +121,6 @@ background-color: rgb(90,90,95);
 
 #projects {
   padding-top: 5vw;
-  padding-bottom: 5vw;
   margin-left: auto;
   margin-right: auto;
   padding-left: 10vw;
@@ -135,7 +134,14 @@ background-color: rgb(90,90,95);
   margin-top: 30px;
 }
 
-
+#work {
+  padding-bottom: 5vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10vw;
+  display: block;
+  width: 90vw;
+}
 
 #footer {
   height: 20vh;
