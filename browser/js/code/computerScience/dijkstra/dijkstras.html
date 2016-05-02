@@ -1,0 +1,16 @@
+<div style='padding-top: 20px;'></div>
+<section class="project_sub">
+    <div class="container novertical">
+        <div class="container description">
+            <p >
+                <h3 style="display: inline;">Description:</h3> an implementation of <a target='_blank' href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's algorithm</a> on html5 canvas, finding the least cost path between two nodes. click and drag Goombas to create walls, drag the pipe around; mario will move along the least cost path to the pipe. 
+            </p>
+        </div>
+        <div class="container description" style="margin-top: 15px; margin-bottom: 50px;">
+            <canvas ng-mousedown='makeSprite($event)' ng-click='makeSprite($event)' id='marioCanvas'></canvas>
+            <input class='btn btn-info' type='button' ng-click='createWorld()' value='Clear Map'>
+            <input class='btn btn-success' type='button' ng-click='createWorld(true)' value='Random Goombas'>
+            <input class='btn btn-success' type='button' ng-click='pathToPipe()' value='Go, Mario, Go!'>
+        </div>
+    </div>
+</section>
