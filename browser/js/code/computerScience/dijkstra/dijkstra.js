@@ -19,11 +19,11 @@ app.controller('dijkCtrl', function ($scope) {
     let currentPath = [];
     const world = [[]];
     const terrainSheet = new Image();
-    terrainSheet.src = '/spritesheet.png';
+    terrainSheet.src = '../../../spritesheet.png';
     const terrainSheetReverse = new Image();
-    terrainSheetReverse.src = '/spritesheetReverse.png';
+    terrainSheetReverse.src = '../../../spritesheetReverse.png';
     const goomba =  new Image()
-    goomba.src = '/goomba.png';
+    goomba.src = '../../../goomba.png';
     const PAGEHEIGHT = 26;
     const PAGEWIDTH = 26;
     const TILEWIDTH = 32;
