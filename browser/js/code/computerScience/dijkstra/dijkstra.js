@@ -23,7 +23,7 @@ app.controller('dijkCtrl', function ($scope) {
     const terrainSheetReverse = new Image();
     terrainSheetReverse.src = 'spritesheetReverse.png';
     const goomba =  new Image()
-    goomba.src = 'goomba.png'
+    goomba.src = 'goomba.png';
     const PAGEHEIGHT = 26;
     const PAGEWIDTH = 26;
     const TILEWIDTH = 32;
