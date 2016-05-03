@@ -211,10 +211,10 @@ var gameOfLife = {
     }
     if ($scope.playval === 'Play') {
         $scope.playval = 'Stop';
-        document.getElementById('play_btn').style.backgroundColor('red');
+        document.getElementById('play_btn').style.backgroundColor ='red';
     } else {
         $scope.playval = 'Play';
-        document.getElementById('play_btn').style.backgroundColor('#337ab7');
+        document.getElementById('play_btn').style.backgroundColor='#337ab7';
     }
     $scope.$digest();
 },
