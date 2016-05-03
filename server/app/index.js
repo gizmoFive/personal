@@ -10,7 +10,7 @@ module.exports = app;
 require('./configure')(app);
 
 app.use(compression())
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/public'))
 // Routes that will be accessed via AJAX should be prepended with
 // /api so they are isolated from our GET /* wildcard.
 app.use('/api', require('./routes'));
