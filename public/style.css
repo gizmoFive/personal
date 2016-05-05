@@ -74,14 +74,18 @@ navbar {
 
 .navbar_horizontal {
   display: none;
+  flex-direction: row;
+  justify-content: flex-start;
   position: fixed;
   background: #313131;
   border-bottom: 1px solid black;
   height: 10vh;
-  width: 90vw;
-  margin-left: 10vw; }
+  width: 100vw; }
+  .navbar_horizontal .logo {
+    height: 8vh;
+    width: 20vw; }
   .navbar_horizontal .nav > li > a {
-    font-size: 1vw;
+    font-size: 2em;
     margin-left: 0px;
     cursor: pointer;
     transition: color 0.2s; }
@@ -92,6 +96,32 @@ navbar {
       color: #f31214; }
     .navbar_horizontal .nav > li > a:focus {
       background: none; }
+
+@media (max-device-width: 40.063em) {
+  #sidenav-container {
+    display: flex;
+    justify-content: center; }
+  #nav-ul {
+    display: flex;
+    flex-direction: row; }
+  navbar {
+    z-index: 2147483647;
+    display: flex;
+    flex-direction: row;
+    height: 0vh; }
+    navbar .container {
+      display: flex;
+      flex-direction: row; }
+  .navbar {
+    display: none; }
+  .navbar_horizontal {
+    display: flex; }
+    .navbar_horizontal ul {
+      display: flex;
+      justify-content: center;
+      align-self: center; }
+      .navbar_horizontal ul li {
+        padding-left: 8px; } }
 
 #about {
   margin: 0 auto;
@@ -167,6 +197,16 @@ navbar {
 
 .project-item {
   cursor: pointer; }
+  @media (max-device-width: 40.063em) {
+    .project-item h3 {
+      font-weight: 800; }
+    .project-item p {
+      font-size: 1.5em; } }
+
+@media (max-device-width: 40.063em) {
+  .introduction, #about, #projects, #top, #footer, #work, .project_sub, #blog, .interest_sections {
+    margin-left: 0px !important;
+    width: 100vw !important; } }
 
 .introduction {
   text-align: center;
@@ -175,6 +215,13 @@ navbar {
   margin-right: auto;
   padding-top: 32vh;
   width: 90vw; }
+  @media (max-device-width: 40.063em) {
+    .introduction h1 {
+      font-size: 3.75em; }
+    .introduction h2 {
+      font-size: 2.75em !important; }
+    .introduction p {
+      font-size: 2em !important; } }
 
 @keyframes slidedown {
   from {
@@ -191,6 +238,9 @@ navbar {
   animation-duration: 2s;
   animation-name: slidedown;
   animation-iteration-count: infinite; }
+  @media (max-device-width: 40.063em) {
+    .fa-angle-down {
+      font-size: 3em !important; } }
 
 #about {
   padding-bottom: 100px;
@@ -204,6 +254,9 @@ navbar {
     text-align: center;
     margin-left: auto;
     margin-right: auto; }
+    @media (max-device-width: 40.063em) {
+      #about #me_description {
+        width: 100vw; } }
   #about #mypic {
     height: 140px;
     width: 140px;
@@ -221,7 +274,7 @@ navbar {
   padding-top: 5vw;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 10vw;
+  margin-left: 10vw;
   display: block;
   width: 90vw; }
 
@@ -229,6 +282,14 @@ navbar {
   width: 90vw;
   margin-left: 10vw;
   margin-top: 30px; }
+  @media (max-device-width: 40.063em) {
+    .project_sub {
+      margin-top: 20vw; }
+      .project_sub .description {
+        font-size: 1.5em; }
+        .project_sub .description h3 {
+          font-weight: 700;
+          text-decoration: underline; } }
 
 #work {
   padding-bottom: 5vw;
@@ -237,6 +298,9 @@ navbar {
   padding-left: 10vw;
   display: block;
   width: 90vw; }
+  @media (max-device-width: 40.063em) {
+    #work hr {
+      margin-right: 9vw; } }
 
 #footer {
   height: 20vh;
@@ -275,6 +339,9 @@ navbar {
 .codeview {
   position: fixed;
   bottom: 0px; }
+
+.interest_sections {
+  margin-top: 10vh; }
 
 .funlogo {
   display: inline-block;
@@ -362,7 +429,7 @@ td.dead {
 .planet:hover {
   fill: cyan; }
 
-@media (max-width: 980px) {
+@media (max-device-width: 980px) {
   .project-item {
     width: 60vw;
     margin-left: 10%; }

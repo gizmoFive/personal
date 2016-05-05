@@ -1,8 +1,9 @@
-<nav class="navbar navbar_horizontal">
-    <div class="container">
+<nav class="navbar_horizontal">
+    <div id='sidenav-container'>
         <div class="navbar-header">
+            <logo id="logo"></logo>
         </div>
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav" id='nav-ul'>
             <li ng-repeat="item in items" ng-show="!item.auth || isLoggedIn()">
                 <a class="navitem" ui-sref-active="active" ui-sref="{{ item.state }}">{{ item.label }}</a>
             </li>
@@ -10,7 +11,7 @@
     </div>
 </nav>
 
-<nav class="navbar">
+<nav class="navbar" id="nav_regular">
     <div class="container">
         <div class="navbar-header">
             <logo id="logo"></logo>

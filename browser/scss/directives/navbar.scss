@@ -91,16 +91,21 @@ navbar {
 
 }
 .navbar_horizontal {
+  .logo {
+    height: 8vh;
+    width: 20vw;
+  }
   display: none;
+  flex-direction: row;
+  justify-content: flex-start;
   position: fixed;
   background: rgba(49,49,49, 1);
   border-bottom: 1px solid black;
   height: 10vh;
-  width: 90vw;
-  margin-left: 10vw;
+  width: 100vw;
 
   .nav > li > a {
-    font-size: 1vw;
+    font-size: 2em;
     margin-left: 0px;
     cursor: pointer;
     transition: color 0.2s;
@@ -116,19 +121,39 @@ navbar {
     }
 }
 }
-
-// @media (max-width: 980px) {
-//     navbar {
-//       .fa-bars {
-//         display: block;
-//       }
-//         .nav > li > a {
-//             display: none;
-//         }
-//     }
-//     .navbar_horizontal {
-//         display: block;
-//     }
-// }
+@media (max-device-width: 40.063em) {
+  #sidenav-container {
+    display: flex;
+    justify-content: center;
+  }
+  #nav-ul{
+    display: flex;
+    flex-direction: row;
+  }
+  navbar{
+    z-index: 2147483647;
+    .container {
+      display: flex;
+      flex-direction: row;
+    }
+    display: flex;
+    flex-direction: row;
+    height: 0vh;
+  }
+  .navbar {
+    display: none;
+  }
+  .navbar_horizontal {
+      display: flex;
+      ul {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        li {
+          padding-left: 8px;
+        }
+      }
+  }
+}
 
 

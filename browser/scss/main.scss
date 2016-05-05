@@ -31,6 +31,7 @@ body {
 
 
 .description {
+
   color: white;
   background-color: rgba(100,100,100,0.8);
   padding: 5px;
@@ -51,10 +52,37 @@ body {
 }
 .project-item {
   cursor: pointer;
+  @media (max-device-width: 40.063em) {
+    h3 {
+      font-weight: 800;
+    }
+    p {
+      font-size: 1.5em;
+    }
+  }
 }
 
+.introduction, #about, #projects, #top, #footer, #work, .project_sub, #blog, .interest_sections {
+
+@media (max-device-width: 40.063em) {
+  margin-left: 0px !important;
+  width: 100vw !important;
+}
+
+}
 
 .introduction {
+  @media (max-device-width: 40.063em) {  
+    h1 {
+      font-size: 3.75em;
+    }
+    h2 {
+      font-size: 2.75em !important;
+    }
+    p {
+      font-size: 2em !important;
+    }
+  }
   text-align: center;
   color: white;
   margin-left: auto;
@@ -79,6 +107,9 @@ body {
 }
 
 .fa-angle-down {
+  @media (max-device-width: 40.063em) {
+    font-size: 3em !important;
+  }
   color: white;
   text-decoration: strong;
   animation-duration: 2s;
@@ -94,6 +125,9 @@ width: 90vw;
 background-color: rgb(90,90,95);
 
   #me_description {
+    @media (max-device-width: 40.063em) {
+      width: 100vw;
+    }
     width: 90vw;
     padding-top: 30px;
     color: white;
@@ -123,12 +157,23 @@ background-color: rgb(90,90,95);
   padding-top: 5vw;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 10vw;
+  margin-left: 10vw;
   display: block;
   width: 90vw;
 }
 
 .project_sub {
+  @media (max-device-width: 40.063em){
+    margin-top: 20vw;
+    .description {
+      h3{
+        font-weight: 700;
+        text-decoration: underline;
+      }
+      font-size: 1.5em; 
+    }
+
+  }
   width: 90vw;
   margin-left: 10vw;
   margin-top: 30px;
@@ -141,6 +186,11 @@ background-color: rgb(90,90,95);
   padding-left: 10vw;
   display: block;
   width: 90vw;
+  @media (max-device-width: 40.063em) {
+    hr {
+      margin-right: 9vw;
+    }   
+  }
 }
 
 #footer {
@@ -192,6 +242,9 @@ background-color: rgb(90,90,95);
 
 // code state
 
+.interest_sections {
+  margin-top: 10vh;
+}
 .funlogo {
   display: inline-block;
   padding: 30px;
@@ -309,7 +362,7 @@ td.dead {
 
 // Media Queries -------
 
-@media (max-width: 980px) {
+@media (max-device-width: 980px) {
   .project-item {
     width: 60vw;
     margin-left: 10%
