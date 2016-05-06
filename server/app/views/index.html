@@ -6,9 +6,10 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Dan Labrie is an experienced, framework-agnostic software engineer from Seattle. Especially proficient in Javascript.">
+    <meta name=viewport>
     <base href="/" />
     <title>Daniel Labrie - Developer</title>
-    <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script>
@@ -19,7 +20,7 @@
     ga('create', 'UA-74239429-1', 'auto');
     ga('send', 'pageview');
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.2/lodash.min.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.2/lodash.min.js"></script>
     <script src="/angular/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js"></script>
     <script src="/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -29,7 +30,7 @@
 <body ng-app="Main" ng-cloak style="background-color: rgb(33,33,33);">
 <!-- NAV -->
     <navbar></navbar>
-    <div  style="margin: 0px; padding: 0px;" ng-hide='!hidden' id="main" class='uiview' ng-class='{animated: !unAnimated}' ui-view></div>
+    <div style="margin: 0px; padding: 0px;" ng-hide='!hidden' id="main" class='uiview' ng-class='{animated: !unAnimated}' ui-view></div>
 <!-- QUICK, HIDE EVERYTHING! -->
     <div ng-hide='hidden'>
 
@@ -56,7 +57,7 @@
 <!-- ABOUT -->
 <section id="about"> 
 <div id="aboutborder"></div>
-<img alt="Dan Labrie" src="http://s16.postimg.org/eq5mtds1h/image.png" id="mypic"/>
+<img alt="Dan Labrie" src="http://imgur.com/o3gmtDw.png" id="mypic"/>
     <div>
         <p id="me_description">
             Hi! My name is Daniel. I'm a full stack software engineer, sailer, hiker, and father of a rocket.
@@ -132,7 +133,7 @@
 
 
 <div class="col-sm-6 col-md-4 project-item" ui-sref="Code-E" ng-mouseover="changejumbo('codeJumbo')">
-    <div class="thumbnail"> <img alt="Code-E" src="http://oi64.tinypic.com/339kto0.jpg" style="height: 200px; width: 100%; display: block;">
+    <div class="thumbnail"> <img alt="Code-E" src="http://imgur.com/2hnIjUk.jpg" style="height: 200px; width: 100%; display: block;">
         <div>
             <h3 style='margin-top: 10px; margin-bottom: 10px'>Code-E</h3>
             <p>Code-E is a chrome extension utilizing natural language recognition to help users navigate developer docs and the web.</p>
@@ -162,7 +163,7 @@
 <hr>
 <br>
  <div class="col-sm-6 col-md-8 col-md-offset-2 project-item">
-    <div class="thumbnail"> <img  ui-sref="static" class="project-item" alt="no-wait" src="http://s32.postimg.org/gcnq8kl8j/snippet.jpg" style="height: 200px; width: 100%; display: block;">
+    <div class="thumbnail"> <img  ui-sref="static" class="project-item" alt="no-wait" src="http://i.imgur.com/gUH7rwh.jpg   " style="height: 200px; width: 100%; display: block;">
         <div>
             <h3 style='margin-top: 10px; margin-bottom: 10px'>Freelance Work:</h3>
             <p>
@@ -195,7 +196,7 @@
                          <li><a href="http://www.twitter.com/labried4" target="_blank"><i style="color:#4099FF;" class="fa fa-twitter fa-lg"></i></a></li>
                     </ul>
 
-                    <p>
+                    <p id="created_by">
                         Created by Daniel Labrie
                     </p>
 
