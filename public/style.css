@@ -330,6 +330,9 @@ navbar {
   list-style: none;
   padding-left: 8px;
   padding-right: 8px; }
+  @media (max-device-width: 40.063em) {
+    #footer li {
+      margin: 15px; } }
 
 #footer li:hover {
   transform: rotate(20deg) scale(1.25); }
