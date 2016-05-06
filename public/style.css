@@ -208,6 +208,18 @@ navbar {
     margin-left: 0px !important;
     width: 100vw !important; } }
 
+@media (max-device-width: 40.063em) {
+  .btn {
+    font-size: 1.2em; } }
+
+@media (max-device-width: 40.063em) {
+  .setControls .btn {
+    font-size: 0.75em; } }
+
+@media (max-device-width: 40.063em) {
+  pre {
+    font-size: 1.25em; } }
+
 .introduction {
   text-align: center;
   color: white;

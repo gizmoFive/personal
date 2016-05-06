@@ -64,13 +64,31 @@ body {
 
 .introduction, #about, #projects, #top, #footer, #work, .project_sub, #blog, .interest_sections {
 
-@media (max-device-width: 40.063em) {
-  margin-left: 0px !important;
-  width: 100vw !important;
-}
+  @media (max-device-width: 40.063em) {
+    margin-left: 0px !important;
+    width: 100vw !important;
+  }
 
 }
 
+.btn {
+  @media (max-device-width: 40.063em) {
+    font-size: 1.2em;
+  }
+}
+.setControls {
+  .btn {
+    @media (max-device-width: 40.063em) {
+    font-size: 0.75em;
+    }
+  }
+}
+
+pre {
+  @media (max-device-width: 40.063em) {
+    font-size: 1.25em;
+  }
+}
 .introduction {
   @media (max-device-width: 40.063em) {  
     h1 {

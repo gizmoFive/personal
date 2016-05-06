@@ -24,8 +24,8 @@ app.controller('dijkCtrl', function ($scope) {
     terrainSheetReverse.src = 'spritesheetReverse.png';
     const goomba =  new Image()
     goomba.src = 'goomba.png';
-    const PAGEHEIGHT = 26;
-    const PAGEWIDTH = 26;
+    let PAGEHEIGHT = 26;
+    let PAGEWIDTH = 26;
     const TILEWIDTH = 32;
     const TILEHEIGHT = 32;
     let pathStart = [PAGEHEIGHT,PAGEWIDTH]
@@ -36,6 +36,14 @@ app.controller('dijkCtrl', function ($scope) {
     const ctx = canvas.getContext("2d");
     terrainSheet.onload = loaded;
 
+    //mobile check
+
+    if(screen.width <= 1024) {
+        PAGEHEIGHT = 22;
+        PAGEWIDTH = 22;
+        canvas.width = PAGEWIDTH * TILEWIDTH;
+        canvas.height = PAGEHEIGHT * TILEHEIGHT;
+    }
     function loaded() {
           console.log('Spritesheet loaded.');
           spritesheetLoaded = true;
@@ -54,8 +62,16 @@ app.controller('dijkCtrl', function ($scope) {
     }
 
     let makeGoomba = (e) => {
-        let clickX = Math.floor(e.layerX / TILEWIDTH) * TILEWIDTH;
-        let clickY = Math.floor(e.layerY / TILEHEIGHT) * TILEHEIGHT;
+        let clickX;
+        let clickY;
+        if(e.layerX !== undefined && e.layerY !== undefined) {
+            clickX = Math.floor(e.layerX / TILEWIDTH) * TILEWIDTH;
+            clickY = Math.floor(e.layerY / TILEHEIGHT) * TILEHEIGHT;
+        }
+        else if(e.touches[0] !== undefined) {
+            clickY = Math.floor((e.touches[0].pageY - canvas.offsetTop) / TILEHEIGHT) * TILEHEIGHT
+            clickX = Math.floor((e.touches[0].pageX - canvas.offsetLeft) / TILEWIDTH) * TILEWIDTH
+        }     
         let gridPosition = world[clickX/TILEWIDTH][clickY/TILEHEIGHT]
         if(gridPosition === 2 || gridPosition === 3) return
         ctx.drawImage(goomba, 
@@ -64,8 +80,16 @@ app.controller('dijkCtrl', function ($scope) {
         }
 
     let pipeMove = function(e) {
-        let clickX = Math.floor(e.layerX / TILEWIDTH) * TILEWIDTH;
-        let clickY = Math.floor(e.layerY / TILEHEIGHT) * TILEHEIGHT;
+        let clickX;
+        let clickY;
+        if(e.layerX !== undefined && e.layerY !== undefined) {
+            clickX = Math.floor(e.layerX / TILEWIDTH) * TILEWIDTH;
+            clickY = Math.floor(e.layerY / TILEHEIGHT) * TILEHEIGHT;
+        }
+        else {
+            clickY = Math.floor((e.touches[0].pageY - canvas.offsetTop) / TILEHEIGHT) * TILEHEIGHT
+            clickX = Math.floor((e.touches[0].pageX - canvas.offsetLeft) / TILEWIDTH) * TILEWIDTH
+        }        
         for (let x=0; x < PAGEWIDTH; x++){
             for (let y=0; y < PAGEHEIGHT; y++){
                 if (world[x][y] === 2){
@@ -79,8 +103,16 @@ app.controller('dijkCtrl', function ($scope) {
     }    
 
     let marioMove = function(e) {
-        let clickX = Math.floor(e.layerX / TILEWIDTH) * TILEWIDTH;
-        let clickY = Math.floor(e.layerY / TILEHEIGHT) * TILEHEIGHT;
+        let clickX;
+        let clickY;
+        if(e.layerX !== undefined && e.layerY !== undefined) {
+            clickX = Math.floor(e.layerX / TILEWIDTH) * TILEWIDTH;
+            clickY = Math.floor(e.layerY / TILEHEIGHT) * TILEHEIGHT;
+        }
+        else if(e.touches[0] !== undefined) {
+            clickY = Math.floor((e.touches[0].pageY - canvas.offsetTop) / TILEHEIGHT) * TILEHEIGHT
+            clickX = Math.floor((e.touches[0].pageX - canvas.offsetLeft) / TILEWIDTH) * TILEWIDTH
+        }
         for (let x=0; x < PAGEWIDTH; x++){
             for (let y=0; y < PAGEHEIGHT; y++){
                 if (world[x][y] === 3){
@@ -94,6 +126,8 @@ app.controller('dijkCtrl', function ($scope) {
     }    
 
     //EVENT LISTENERS
+
+    // CLICKS
 
     canvas.ondblclick = function(e) {
         dieGoomba(e)
@@ -117,9 +151,34 @@ app.controller('dijkCtrl', function ($scope) {
     };
 
     canvas.onmouseup = function() {
-        // console.log(world.map(x => x.map(y => world[x][y])))
         canvas.onmousemove = null;
     };
+
+    // TOUCHES
+
+    canvas.addEventListener('touchstart', function(e) {
+        let clickX = Math.floor((e.touches[0].pageX - canvas.offsetLeft) / TILEWIDTH) * TILEWIDTH
+        let clickY = Math.floor((e.touches[0].pageY - canvas.offsetTop) / TILEHEIGHT) * TILEHEIGHT
+        let gridPosition = world[clickX/TILEWIDTH][clickY/TILEHEIGHT]
+        if(gridPosition === 2){
+            canvas.addEventListener('touchmove', pipeMove, false)
+        }
+        else if(gridPosition === 3){
+            canvas.addEventListener('touchmove', marioMove, false);
+        }
+        else{
+        canvas.addEventListener('touchmove', makeGoomba, false);
+        }
+    }, false)
+
+    canvas.addEventListener('touchend', function(e) {
+        canvas.removeEventListener('touchmove', pipeMove);
+        canvas.removeEventListener('touchmove', marioMove);
+        canvas.removeEventListener('touchmove', makeGoomba);
+    })
+    // canvas.addEventListener('touchend', canvas.onmouseup, false)
+    // canvas.ontouchend = canvas.onmouseup;
+
 
     //USER INTERACTIONS
 
