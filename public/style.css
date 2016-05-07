@@ -360,8 +360,9 @@ navbar {
   position: fixed;
   bottom: 0px; }
 
-.interest_sections {
-  margin-top: 10vh; }
+@media (max-device-width: 40.063em) {
+  .interest_sections {
+    margin-top: 10vh; } }
 
 .funlogo {
   display: inline-block;
