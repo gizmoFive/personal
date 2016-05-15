@@ -97,7 +97,7 @@ navbar {
     .navbar_horizontal .nav > li > a:focus {
       background: none; }
 
-@media (max-device-width: 40.063em) {
+@media (max-device-width: 40.063em), (max-width: 40.063em) {
   #sidenav-container {
     display: flex;
     justify-content: center; }
@@ -197,26 +197,26 @@ navbar {
 
 .project-item {
   cursor: pointer; }
-  @media (max-device-width: 40.063em) {
+  @media (max-device-width: 40.063em), (max-width: 40.063em) {
     .project-item h3 {
       font-weight: 800; }
     .project-item p {
       font-size: 1.5em; } }
 
-@media (max-device-width: 40.063em) {
+@media (max-device-width: 40.063em), (max-width: 40.063em) {
   .introduction, #about, #projects, #top, #footer, #work, .project_sub, #blog, .interest_sections {
     margin-left: 0px !important;
     width: 100vw !important; } }
 
-@media (max-device-width: 40.063em) {
+@media (max-device-width: 40.063em), (max-width: 40.063em) {
   .btn {
     font-size: 1.2em; } }
 
-@media (max-device-width: 40.063em) {
+@media (max-device-width: 40.063em), (max-width: 40.063em) {
   .setControls .btn {
     font-size: 0.75em; } }
 
-@media (max-device-width: 40.063em) {
+@media (max-device-width: 40.063em), (max-width: 40.063em) {
   pre {
     font-size: 1.25em; } }
 
@@ -227,7 +227,7 @@ navbar {
   margin-right: auto;
   padding-top: 32vh;
   width: 90vw; }
-  @media (max-device-width: 40.063em) {
+  @media (max-device-width: 40.063em), (max-width: 40.063em) {
     .introduction h1 {
       font-size: 3.75em; }
     .introduction h2 {
@@ -250,7 +250,7 @@ navbar {
   animation-duration: 2s;
   animation-name: slidedown;
   animation-iteration-count: infinite; }
-  @media (max-device-width: 40.063em) {
+  @media (max-device-width: 40.063em), (max-width: 40.063em) {
     .fa-angle-down {
       font-size: 3em !important; } }
 
@@ -266,7 +266,7 @@ navbar {
     text-align: center;
     margin-left: auto;
     margin-right: auto; }
-    @media (max-device-width: 40.063em) {
+    @media (max-device-width: 40.063em), (max-width: 40.063em) {
       #about #me_description {
         font-size: 2em;
         width: 100vw; } }
@@ -295,7 +295,7 @@ navbar {
   width: 90vw;
   margin-left: 10vw;
   margin-top: 30px; }
-  @media (max-device-width: 40.063em) {
+  @media (max-device-width: 40.063em), (max-width: 40.063em) {
     .project_sub {
       margin-top: 20vw; }
       .project_sub .description {
@@ -311,7 +311,7 @@ navbar {
   padding-left: 10vw;
   display: block;
   width: 90vw; }
-  @media (max-device-width: 40.063em) {
+  @media (max-device-width: 40.063em), (max-width: 40.063em) {
     #work hr {
       margin-right: 9vw; } }
 
@@ -331,7 +331,7 @@ navbar {
   list-style: none;
   padding-left: 8px;
   padding-right: 8px; }
-  @media (max-device-width: 40.063em) {
+  @media (max-device-width: 40.063em), (max-width: 40.063em) {
     #footer li {
       margin: 15px; } }
 
@@ -352,7 +352,7 @@ navbar {
   margin-left: 10px;
   margin-right: 10px; }
 
-@media (max-device-width: 40.063em) {
+@media (max-device-width: 40.063em), (max-width: 40.063em) {
   #footer #created_by {
     font-size: 1.75em; } }
 
@@ -360,7 +360,7 @@ navbar {
   position: fixed;
   bottom: 0px; }
 
-@media (max-device-width: 40.063em) {
+@media (max-device-width: 40.063em), (max-width: 40.063em) {
   .interest_sections {
     margin-top: 10vh; } }
 
@@ -450,7 +450,7 @@ td.dead {
 .planet:hover {
   fill: cyan; }
 
-@media (max-device-width: 980px) {
+@media (max-device-width: 980px), (max-width: 40.063em) {
   .project-item {
     width: 60vw;
     margin-left: 10%; }

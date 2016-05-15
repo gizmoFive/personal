@@ -121,7 +121,7 @@ navbar {
     }
 }
 }
-@media (max-device-width: 40.063em) {
+@media (max-device-width: 40.063em), (max-width: 40.063em) {
   #sidenav-container {
     display: flex;
     justify-content: center;
